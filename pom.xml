@@ -7,6 +7,14 @@
   <version>1.0</version>
   <name>Test Maven Webapp</name>
   <url>http://maven.apache.org</url>
+
+    <properties>
+        <version.seam>2.3.0.Final</version.seam>
+        <javaee6.web.spec.version>3.0.1.Final</javaee6.web.spec.version>
+        <!--<version.richfaces>4.2.2.Final</version.richfaces>-->
+        <!--<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>-->
+        <!--<javaee6.web.spec.version>3.0.1.Final</javaee6.web.spec.version>-->
+    </properties>
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -40,6 +48,61 @@
               <version>2.5</version>
           </dependency>
 
+      <dependency>
+          <groupId>org.jboss.seam</groupId>
+          <artifactId>jboss-seam</artifactId>
+          <version>${version.seam}</version>
+          <!--<scope>provided</scope>-->
+      </dependency>
+
+      <dependency>
+          <groupId>org.jboss.seam</groupId>
+          <artifactId>bom</artifactId>
+          <version>${version.seam}</version>
+          <type>pom</type>
+          <scope>import</scope>
+      </dependency>
+
+      <dependency>
+          <groupId>org.jboss.spec</groupId>
+          <artifactId>jboss-javaee-web-6.0</artifactId>
+          <version>${javaee6.web.spec.version}</version>
+          <type>pom</type>
+          <scope>import</scope>
+      </dependency>
+      <dependency>
+          <groupId>org.hibernate</groupId>
+          <artifactId>hibernate-validator</artifactId>
+          <version>3.1.0.GA</version>
+      </dependency>
+
+      <dependency>
+          <groupId>org.hibernate</groupId>
+          <artifactId>hibernate-annotations</artifactId>
+          <version>3.3.0.ga</version>
+      </dependency>
+
+      <dependency>
+          <groupId>org.hibernate</groupId>
+          <artifactId>hibernate-entitymanager</artifactId>
+          <version>3.3.1.ga</version>
+      </dependency>
+      <!--<dependency>-->
+          <!--<groupId>org.hibernate</groupId>-->
+          <!--<artifactId>hibernate-core</artifactId>-->
+          <!--<version>3.6.2.Final</version>-->
+      <!--</dependency>-->
+
+      <dependency>
+          <groupId>org.hibernate</groupId>
+          <artifactId>hibernate-search</artifactId>
+          <version>3.3.0.Final</version>
+      </dependency>
+      <dependency>
+          <groupId>javassist</groupId>
+          <artifactId>javassist</artifactId>
+          <version>3.12.1.GA</version>
+      </dependency>
 
   </dependencies>
   <repositories>
@@ -48,6 +111,7 @@
       <name>jvnet-nexus-releases</name>
       <url>https://maven.java.net/content/repositories/releases/</url>
     </repository>
+
     <repository>
       <id>jboss-public-repository-group</id>
       <name>JBoss Public Repository Group</name>
